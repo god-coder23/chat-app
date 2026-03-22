@@ -21,6 +21,18 @@ const ChatBox = ({chatId,user}) => {
         setMessage('')
 
     }
+    const searchUser = async (e) => {
+    const val = e.target.value.toLowerCase()
+    setSearchedText(val)
+    
+    if (val.trim() === '') {
+        setSearchResult([])  // ← clear results when empty
+        return
+    }
+    
+    // rest of search code...
+}
+
     useEffect(()=>{
         if (!chatId) return
         setChatUser(null)

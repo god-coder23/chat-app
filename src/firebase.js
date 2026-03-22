@@ -9,13 +9,13 @@ import { getDatabase } from 'firebase/database'
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyC2p6C9Hh1aSmHOPoYsyDFg57TfELvUQA4",
-  authDomain: "mailchat-c1c50.firebaseapp.com",
-  projectId: "mailchat-c1c50",
-  storageBucket: "mailchat-c1c50.firebasestorage.app",
-  messagingSenderId: "1046264839982",
-  appId: "1:1046264839982:web:0322d70aca9dd34bb9c4bf",
-  measurementId: "G-R6FN9ZFZ1X"
+  apiKey: "AIzaSyD5CWmMdyJxL1v8lty29tCXYNdxKPWHqE4",
+  authDomain: "chatmail-7d09f.firebaseapp.com",
+  projectId: "chatmail-7d09f",
+  storageBucket: "chatmail-7d09f.firebasestorage.app",
+  messagingSenderId: "724317868188",
+  appId: "1:724317868188:web:88fdd3fa3c13ff39af5d59",
+  measurementId: "G-VZR89JGX7C"
 };
 
 // Initialize Firebase
