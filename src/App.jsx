@@ -4,11 +4,21 @@ import ChatBox from './Components/ChatBox'
 import { onAuthStateChanged } from 'firebase/auth';
 import Login from '../src/Login';
 import { auth } from './firebase';
+import { ref, set, onDisconnect } from 'firebase/database'
+import { rtdb } from './firebase'
 const App = () => {
   const [user, setUser] = React.useState(null);
+  const [CurrentChatId, setCurrentChatId] = React.useState(null);
   useEffect(()=>{
     onAuthStateChanged(auth,(u)=>setUser(u))
   },[])
+  useEffect(() => {
+    if (!user) return
+    const userRef = ref(rtdb, `status/${user.uid}`)
+    set(userRef, { online: true })
+    onDisconnect(userRef).set({ online: false })
+}, [user])
+  
   if (!user) return <Login />
   return (
      <div className='h-screen w-screen overflow-hidden relative'>
@@ -22,10 +32,10 @@ const App = () => {
       {/* layout */}
       <div className='absolute inset-0 flex flex-row'>
         <div className='w-[300px] shrink-0'>
-          <SideBar user={user} />
+          <SideBar user={user} onChatOpen={setCurrentChatId} />
         </div>
         <div className='flex-1'>
-          <ChatBox />
+          <ChatBox user={user} chatId={CurrentChatId} />
         </div>
       </div>
     </div>
