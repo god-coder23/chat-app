@@ -58,27 +58,7 @@ const SideBar = ({user,onChatOpen}) => {
                 </div>
             </div>
         ))}
-        {(!checkTyping && (
-            <div className='bg-black/20 backdrop-blur-md h-screen overflow-y-auto '>
-                <div className='flex flex-row px-3 py-3 items-center hover:bg-white/10'>
-                {/*photo hai name ka*/}
-                    <div className='h-12 w-12 rounded-full bg-gray-400 ml-2 shrink-0'></div>
-                    {/*person name*/} 
-                    <div className='flex flex-col pl-4 flex-1'>
-                        <div className='text-white '>
-                        Yatnesh Agarwal
-                    </div>
-                    <div className='text-gray-400 text-sm truncate'>
-                        Hello bhai kese ho
-                    </div>
-                    </div>
-                    {/* time kya hai  */}
-                    <div className='text-gray-300 pl-3 pb-5 text-sm shrink-0'>
-                        12:34pm
-                    </div>
-                </div>
-            </div>
-        ))}
+        
     </div>
   )
 }
